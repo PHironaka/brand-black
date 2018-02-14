@@ -1,0 +1,49 @@
+
+<section class="video-container">
+<video poster="https://s3-us-west-2.amazonaws.com/gleight/ML_BG_Still7.jpg" playsinline="" autoplay="" muted="" loop="">
+<source type="video/mp4" src="https://www.videvo.net/videvo_files/converted/2017_08/videos/170724_15_Setangibeach.mp486212.mp4">
+<source type="video/webm" src="https://www.videvo.net/videvo_files/converted/2017_08/preview/170724_15_Setangibeach.mp486212.webm">
+</video>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Hero Video",
+    "class": "hidden-xs",
+    "settings": [
+		{
+			"type":	"select",
+			"id": 	"video_type",
+			"label": "Video Source",
+			"options": [
+				{ 
+                  "group": "youtube",
+                  "value": "youtube", 
+                  "label": "YouTube"  
+                },
+				{ 
+                  "group": "vimeo",
+                  "value": "vimeo", 
+                  "label": "Vimeo" 
+                }
+			],
+			"default": "vimeo",
+            "info": "From which site is the video streaming from?"
+		},
+		{
+			"type": "text",
+			"id": "video_id",
+			"label": "Video ID",
+			"default": "_9VUPq3SxOc",
+			"info": "[Find your YouTube video ID](https://docs.joeworkman.net/rapidweaver/stacks/youtube/video-id)."
+		}
+    ],
+    "presets": [
+      {
+        "name": "Video",
+        "category": "Frontpage Sections"
+      }
+    ]
+  }
+{% endschema %}

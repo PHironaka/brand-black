@@ -1,0 +1,24 @@
+/*================ General layout styles ================*/
+body,
+html {
+  background-color: $color-body;
+}
+
+.page-width {
+  @include clearfix();
+  max-width: $width-site;
+  padding: 0 $gutter;
+  margin: 0 auto;
+}
+
+.container {
+      margin: 0 auto;
+    width: 90%;
+    max-width: 68em;
+    display: grid;
+    grid-column-gap: 2rem;
+    margin: 0 auto;
+    padding: 0 2.55555em;
+ 	grid-gap:20px;
+
+}
