@@ -7,35 +7,749 @@
     "theme_documentation_url": "https://shopify.github.io/slate/",
     "theme_support_url": "https://github.com/Shopify/slate"
   },
-  {
-    "name": "Typography",
-    "settings": [
-      {
-        "type": "select",
-        "id": "type_base_size",
-        "label": "Base size",
-        "default": "16px",
-        "options": [
-          {
-            "value": "14px",
-            "label": "14px"
-          },
-          {
-            "value": "15px",
-            "label": "15px"
-          },
-          {
-            "value": "16px",
-            "label": "16px"
-          },
-          {
-            "value": "17px",
-            "label": "17px"
-          }
-        ]
-      }
-    ]
-  },
+  {  
+      "name":"Typography",
+      "settings":[  
+         {  
+            "type":"header",
+            "content":"Headings"
+         },
+         {  
+            "type":"select",
+            "id":"type_header_family",
+            "label":"Font",
+            "options":[  
+               {  
+                  "value":"'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif",
+                  "label":"Avant Garde",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"'Gill Sans', 'Gill Sans MT', Calibri, sans-serif",
+                  "label":"Gill Sans",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+                  "label":"Helvetica Neue",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"Arial, 'Helvetica Neue', Helvetica, sans-serif",
+                  "label":"Arial",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif",
+                  "label":"Candara",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"Geneva, Tahoma, Verdana, sans-serif",
+                  "label":"Geneva",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"Google_Droid+Sans_400_sans",
+                  "label":"Droid Sans",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Oswald_400",
+                  "label":"Oswald",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Droid+Sans_700_sans",
+                  "label":"Droid Sans Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Lato_400_sans",
+                  "label":"Lato",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Lato_700_sans",
+                  "label":"Lato Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Montserrat_400_sans",
+                  "label":"Montserrat",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Montserrat_700_sans",
+                  "label":"Montserrat Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Open+Sans_400_sans",
+                  "label":"Open Sans",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Open+Sans_700_sans",
+                  "label":"Open Sans Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_PT+Sans_400_sans",
+                  "label":"PT Sans",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_PT+Sans_700_sans",
+                  "label":"PT Sans Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Roboto_400_sans",
+                  "label":"Roboto",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Roboto_700_sans",
+                  "label":"Roboto Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Source+Sans+Pro_400_sans",
+                  "label":"Source Sans Pro",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Source+Sans+Pro_700_sans",
+                  "label":"Source Sans Pro Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Ubuntu_400_sans",
+                  "label":"Ubuntu",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Ubuntu_700_sans",
+                  "label":"Ubuntu Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif",
+                  "label":"Big Calson",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif",
+                  "label":"Calisto MT",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif",
+                  "label":"Baskerville",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+                  "label":"Garamond",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif",
+                  "label":"Times New Roman",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"Google_Arvo_400_serif",
+                  "label":"Arvo",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Arvo_700_serif",
+                  "label":"Arvo Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Crimson+Text_400_serif",
+                  "label":"Crimson Text",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Crimson+Text_700_serif",
+                  "label":"Crimson Text Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Droid+Serif_400_serif",
+                  "label":"Droid Serif",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Droid+Serif_700_serif",
+                  "label":"Droid Serif Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Lora_400_serif",
+                  "label":"Lora",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Lora_700_serif",
+                  "label":"Lora Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Old+Standard+TT_400_serif",
+                  "label":"Old Standard",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Old+Standard+TT_700_serif",
+                  "label":"Old Standard Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_PT+Serif_400_serif",
+                  "label":"PT Serif",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_PT+Serif_700_serif",
+                  "label":"PT Serif Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Vollkorn_400_serif",
+                  "label":"Vollkorn",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Vollkorn_700_serif",
+                  "label":"Vollkorn Bold",
+                  "group":"Serif | Google Web Fonts"
+               }
+            ]
+         },
+         {  
+            "type":"select",
+            "id":"type_header_base_size",
+            "label":"Base size",
+            "options":[  
+               {  
+                  "value":"26px",
+                  "label":"26px"
+               },
+               {  
+                  "value":"28px",
+                  "label":"28px"
+               },
+               {  
+                  "value":"30px",
+                  "label":"30px"
+               },
+               {  
+                  "value":"32px",
+                  "label":"32px"
+               },
+               {  
+                  "value":"34px",
+                  "label":"34px"
+               }
+            ]
+         },
+         {  
+            "type":"select",
+            "id":"type_header_border_thickness",
+            "label":"Underline thickness",
+            "options":[  
+               {  
+                  "value":"1px",
+                  "label":"Light"
+               },
+               {  
+                  "value":"2px",
+                  "label":"Medium"
+               },
+               {  
+                  "value":"3px",
+                  "label":"Bold"
+               }
+            ]
+         },
+         {  
+            "type":"header",
+            "content":"Accent text",
+            "info":"Used for navigation, buttons, small headings"
+         },
+         {  
+            "type":"select",
+            "id":"type_accent_family",
+            "label":"Font",
+            "options":[  
+               {  
+                  "value":"'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif",
+                  "label":"Avant Garde",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"'Gill Sans', 'Gill Sans MT', Calibri, sans-serif",
+                  "label":"Gill Sans",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+                  "label":"Helvetica Neue",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"Arial, 'Helvetica Neue', Helvetica, sans-serif",
+                  "label":"Arial",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif",
+                  "label":"Candara",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"Geneva, Tahoma, Verdana, sans-serif",
+                  "label":"Geneva",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"Google_Droid+Sans_400_sans",
+                  "label":"Droid Sans",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Droid+Sans_700_sans",
+                  "label":"Droid Sans Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Lato_400_sans",
+                  "label":"Lato",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Lato_700_sans",
+                  "label":"Lato Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Montserrat_400_sans",
+                  "label":"Montserrat",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Montserrat_700_sans",
+                  "label":"Montserrat Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Open+Sans_400_sans",
+                  "label":"Open Sans",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Open+Sans_700_sans",
+                  "label":"Open Sans Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_PT+Sans_400_sans",
+                  "label":"PT Sans",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_PT+Sans_700_sans",
+                  "label":"PT Sans Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Roboto_400_sans",
+                  "label":"Roboto",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Roboto_700_sans",
+                  "label":"Roboto Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Source+Sans+Pro_400_sans",
+                  "label":"Source Sans Pro",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Source+Sans+Pro_700_sans",
+                  "label":"Source Sans Pro Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Ubuntu_400_sans",
+                  "label":"Ubuntu",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Ubuntu_700_sans",
+                  "label":"Ubuntu Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif",
+                  "label":"Big Calson",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif",
+                  "label":"Calisto MT",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif",
+                  "label":"Baskerville",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+                  "label":"Garamond",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"Georgia, 'Hoefler Text', 'Times New Roman', serif",
+                  "label":"Georgia",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif",
+                  "label":"Times New Roman",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"Google_Arvo_400_serif",
+                  "label":"Arvo",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Arvo_700_serif",
+                  "label":"Arvo Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Crimson+Text_400_serif",
+                  "label":"Crimson Text",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Crimson+Text_700_serif",
+                  "label":"Crimson Text Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Droid+Serif_400_serif",
+                  "label":"Droid Serif",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Droid+Serif_700_serif",
+                  "label":"Droid Serif Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Lora_400_serif",
+                  "label":"Lora",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Lora_700_serif",
+                  "label":"Lora Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_PT+Serif_400_serif",
+                  "label":"PT Serif",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_PT+Serif_700_serif",
+                  "label":"PT Serif Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Vollkorn_400_serif",
+                  "label":"Vollkorn",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Vollkorn_700_serif",
+                  "label":"Vollkorn Bold",
+                  "group":"Serif | Google Web Fonts"
+               }
+            ]
+         },
+         {  
+            "type":"checkbox",
+            "id":"type_accent_transform",
+            "label":"Capitalize"
+         },
+         {  
+            "type":"checkbox",
+            "id":"type_accent_spacing",
+            "label":"Letter spacing"
+         },
+         {  
+            "type":"header",
+            "content":"Body text"
+         },
+         {  
+            "type":"select",
+            "id":"type_base_family",
+            "label":"Font",
+            "options":[  
+               {  
+                  "value":"'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif",
+                  "label":"Avant Garde",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"'Gill Sans', 'Gill Sans MT', Calibri, sans-serif",
+                  "label":"Gill Sans",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+                  "label":"Helvetica Neue",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"Arial, 'Helvetica Neue', Helvetica, sans-serif",
+                  "label":"Arial",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif",
+                  "label":"Candara",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"Geneva, Tahoma, Verdana, sans-serif",
+                  "label":"Geneva",
+                  "group":"Sans-serif"
+               },
+               {  
+                  "value":"Google_Droid+Sans_400_sans",
+                  "label":"Droid Sans",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Droid+Sans_700_sans",
+                  "label":"Droid Sans Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Lato_400_sans",
+                  "label":"Lato",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Lato_700_sans",
+                  "label":"Lato Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Montserrat_400_sans",
+                  "label":"Montserrat",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Montserrat_700_sans",
+                  "label":"Montserrat Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Open+Sans_400_sans",
+                  "label":"Open Sans",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Open+Sans_700_sans",
+                  "label":"Open Sans Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_PT+Sans_400_sans",
+                  "label":"PT Sans",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_PT+Sans_700_sans",
+                  "label":"PT Sans Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Roboto_400_sans",
+                  "label":"Roboto",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Roboto_700_sans",
+                  "label":"Roboto Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Source+Sans+Pro_400_sans",
+                  "label":"Source Sans Pro",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Source+Sans+Pro_700_sans",
+                  "label":"Source Sans Pro Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Ubuntu_400_sans",
+                  "label":"Ubuntu",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Ubuntu_700_sans",
+                  "label":"Ubuntu Bold",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif",
+                  "label":"Big Calson",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif",
+                  "label":"Calisto MT",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif",
+                  "label":"Baskerville",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+                  "label":"Garamond",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"Georgia, 'Hoefler Text', 'Times New Roman', serif",
+                  "label":"Georgia",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif",
+                  "label":"Times New Roman",
+                  "group":"Serif"
+               },
+               {  
+                  "value":"Google_Arapey_400_serif",
+                  "label":"Arapey",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Oswald_400",
+                  "label":"Oswald",
+                  "group":"Sans-serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Arvo_400_serif",
+                  "label":"Arvo",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Arvo_700_serif",
+                  "label":"Arvo Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Crimson+Text_400_serif",
+                  "label":"Crimson Text",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Crimson+Text_700_serif",
+                  "label":"Crimson Text Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Droid+Serif_400_serif",
+                  "label":"Droid Serif",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Droid+Serif_700_serif",
+                  "label":"Droid Serif Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Lora_400_serif",
+                  "label":"Lora",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Lora_700_serif",
+                  "label":"Lora Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_PT+Serif_400_serif",
+                  "label":"PT Serif",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_PT+Serif_700_serif",
+                  "label":"PT Serif Bold",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Vollkorn_400_serif",
+                  "label":"Vollkorn",
+                  "group":"Serif | Google Web Fonts"
+               },
+               {  
+                  "value":"Google_Vollkorn_700_serif",
+                  "label":"Vollkorn Bold",
+                  "group":"Serif | Google Web Fonts"
+               }
+            ]
+         },
+         {  
+            "type":"select",
+            "id":"type_base_size",
+            "label":"Base size",
+            "options":[  
+               {  
+                  "value":"14px",
+                  "label":"14px"
+               },
+               {  
+                  "value":"15px",
+                  "label":"15px"
+               },
+               {  
+                  "value":"16px",
+                  "label":"16px"
+               },
+               {  
+                  "value":"17px",
+                  "label":"17px"
+               }
+            ]
+         },
+         {  
+            "type":"checkbox",
+            "id":"type_base_italize_titles",
+            "label":"Italicize titles, dates, etc."
+         }
+      ]
+   },
   {
     "name": "Colors",
     "settings": [

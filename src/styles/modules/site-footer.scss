@@ -1,0 +1,30 @@
+footer {
+padding:3em 0;
+line-height:1.4;
+color: #5d5d5d;
+
+a {
+	color:#5d5d5d;
+}
+.container {
+	    grid-template-columns: 2fr 1.5fr 1.5fr 2fr;
+}
+
+
+
+.footer-right {
+	text-align:right;
+
+}
+ul.social {
+	display: grid;
+    grid-template-columns: 40px 40px 40px;
+    justify-content: right;
+    color: #5d5d5d;
+    svg {
+    fill:black;
+    }
+}	
+
+
+}

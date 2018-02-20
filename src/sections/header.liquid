@@ -7,10 +7,11 @@
 </style>
 <div data-section-id="{{ section.id }}" data-section-type="header-section">
   <header role="banner">
-   
       <div class="container" itemscope itemtype="http://schema.org/Organization">
-        <a href="/" itemprop="url" class="site-logo{% if section.settings.logo != blank %} site-header__logo-image{% endif %}">
-         <svg width="311" height="36" xmlns="http://www.w3.org/2000/svg">
+       
+       <div class="logo"> 
+        <a href="/" itemprop="url" >
+         <svg viewBox="0 0 311 36" xmlns="http://www.w3.org/2000/svg">
   <g id="Notes" fill="none" fill-rule="evenodd" transform="translate(-329 -605)">
     <g id="Brandblack-logos---all-3-on-1-PDF" transform="translate(329 383)" fill="#1A1919">
       <g id="BB" transform="translate(0 222)">
@@ -30,54 +31,7 @@
 </svg>
 
         </a>
-
-        <a href="/cart">
-      {% include 'icon-cart' %}
-      {{ 'layout.cart.title' | t }}
-      ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})
-    </a>
-
-    {% if shop.customer_accounts_enabled %}
-      <ul>
-        {% if customer %}
-          <li>
-            {% if customer.first_name != blank %}
-              {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
-              {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
-            {% else %}
-              <a href="/account">{{ 'layout.customer.account' | t }}</a>
-            {% endif %}
-          </li>
-          <li>
-            {{ 'layout.customer.log_out' | t | customer_logout_link }}
-          </li>
-        {% else %}
-          <li>
-            {{ 'layout.customer.log_in' | t | customer_login_link }}
-          </li>
-          <li>
-            {{ 'layout.customer.create_account' | t | customer_register_link }}
-          </li>
-        {% endif %}
-      </ul>
-    {% endif %}
-
-    <form action="/search" method="get" role="search">
-      <label for="Search" class="label-hidden">
-        {{ 'general.search.placeholder' | t }}
-      </label>
-      <input type="search"
-             name="q"
-             id="Search"
-             value="{{ search.terms | escape }}"
-             placeholder="{{ 'general.search.placeholder' | t }}">
-      <button type="submit" class="btn">
-        {% include 'icon-search' %}
-        <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
-      </button>
-    </form>
-
-
+</div>
 
     <nav role="navigation">
     <ul class="site-nav">
@@ -104,6 +58,41 @@
       {% endfor %}
     </ul>
   </nav>
+
+<ul class="user-login">
+        <a href="/cart">
+      {% include 'icon-cart' %}
+      ({{ cart.item_count }})
+    </a>
+
+            {% if shop.customer_accounts_enabled %}
+                  <li class="site-nav__item site-nav__expanded-item">
+                    <a class="site-nav__link site-nav__link--icon" href="/account">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </a>
+                  </li>
+                {% endif %}
+
+</ul>
+    {% comment %}
+       <form action="/search" method="get" role="search">
+      <label for="Search" class="label-hidden">
+        {{ 'general.search.placeholder' | t }}
+      </label>
+      <input type="search"
+             name="q"
+             id="Search"
+             value="{{ search.terms | escape }}"
+             placeholder="{{ 'general.search.placeholder' | t }}">
+      <button type="submit" class="btn">
+        {% include 'icon-search' %}
+        <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
+      </button>
+    </form>
+
+{% endcomment %}
+
+
 
   
  

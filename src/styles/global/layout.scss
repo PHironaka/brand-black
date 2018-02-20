@@ -19,6 +19,140 @@ html {
     grid-column-gap: 2rem;
     margin: 0 auto;
     padding: 0 2.55555em;
- 	grid-gap:20px;
+ 	  grid-gap:20px;
+    grid-template-columns: 2fr 2fr 2fr;
+}
 
+.main-container {
+      margin: 2em auto;
+    width: 90%;
+    max-width: 68em;
+    display: grid;
+    padding: 0 2.55555em;
+    grid-gap:3rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+
+#shopify-section-1518589654752, #shopify-section-collection-list {
+  grid-column: 1/5;
+}
+
+.video-container {
+  position:relative;
+    width: 100%;
+    height: auto;
+}
+
+video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width:100%;
+    height:auto;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+}
+
+#shopify-section-collection-list {
+    display: grid;
+    grid-column-gap: 2rem;
+    grid-template-columns: 2fr 2fr;
+    width: 100%;
+}
+
+#shopify-section-product {
+  grid-column: 3/3;
+}
+
+
+.collection-item {
+  grid-column: auto / span 1;
+}
+
+#shopify-section-featured-collection {
+  grid-column: 1/5;
+   display: grid;
+    padding: 0 2.55555em;
+    grid-gap: 3rem;
+    grid-template-columns: 1fr 1fr ;
+}
+
+
+.pagination {
+  grid-column: auto / span 4;
+    text-align: center;
+    margin: 3em 0;
+
+    span {
+    margin: 0 10px;
+    }
+
+    span.current {
+    padding: 5px 9px;
+    border-radius: 50%;
+    background-color:#eaeaea;
+    }
+}
+
+.product-item {
+  grid-column: auto / span 2;
+}
+
+.selector-wrapper, .product-price {
+  margin: 1em 0;
+}
+
+.related-products {
+  grid-column: 1/5;
+}
+
+.grid-product__on-sale h3 {
+      border: 1px solid ;
+    text-align: center;
+    padding: 11px;
+}
+
+.add-to-cart {
+      box-sizing: border-box;
+    background: #000;
+    border: 0;
+    color: #fff;
+    display: block;
+    float: left;
+    font-weight: bold;
+    line-height: 1em;
+    margin: 0;
+    padding: 16px 24px;
+    width: 100%;
+    text-align: center;
+}
+
+.selector-wrapper {
+     box-sizing: border-box;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    line-height: 1em;
+    padding: 3px 17px;
+    width: 60%;
+
+    select {
+    top: 0;
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border: none;
+    }
+}
+
+.product-description {
+  margin: 1em 0;
+      display: inline-block;
+}
+
+.page-content {
+      grid-column: 1 / 4;
 }
