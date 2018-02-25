@@ -2,35 +2,12 @@
 
 {%- assign collection = collections[section.settings.collection] -%}
 
-{% for product in collection.products limit: 6 %}
+
+
 <div class="featured-collection--item">
-  <a href="{{ product.url | within: collection }}">
-    {% if product.featured_image != blank %}
-      {{ product.featured_image.src | img_url: '480x480' | img_tag: product.title }}
-    {% endif %}
-    <p>{{ product.title }}</p>
-  </a>
-  
-  <p>
-    {% if product.compare_at_price > product.price %}
-      {% if product.price_varies %}
-        {%- assign sale_price = product.price | money -%}
-        {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
-      {% else %}
-        {{ 'products.product.on_sale' | t }}
-        {{ product.price | money }}
-      {% endif %}
-    {% else %}
-      {% if product.price_varies %}
-        {%- assign price = product.price | money -%}
-        {{ 'products.product.from_text_html' | t: price: price }}
-      {% else %}
-        {{ product.price | money }}
-      {% endif %}
-    {% endif %}
-  </p>
+  <img src="{{ section.settings.collection-img | img_url: 'master' }}" />
+
 </div>
-{% endfor %}
  
 
 
@@ -39,6 +16,12 @@
   {
     "name": "Featured collection",
     "settings": [
+      {
+        "type": "image_picker",
+        "id": "collection-img",
+        "label": "collection-img"
+      },
+
       {
         "type": "text",
         "id": "title",
