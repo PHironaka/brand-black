@@ -7,10 +7,8 @@
     <h1>{{ 'customer.login.title' | t }}</h1>
 
     {{ form.errors | default_errors }}
+  <div class="customer--fields">
 
-    <label for="CustomerEmail" class="label-hidden">
-      {{ 'customer.login.email' | t }}
-    </label>
     <input type="email"
            name="customer[email]"
            id="CustomerEmail"
@@ -20,28 +18,42 @@
            autocomplete="off"
            autocapitalize="off"
            autofocus>
+</div>
+
 
     {% if form.password_needed %}
-      <label for="CustomerPassword" class="label-hidden">
-        {{ 'customer.login.password' | t }}
-      </label>
+      <div class="customer--fields">
+
+    
       <input type="password"
              name="customer[password]"
              id="CustomerPassword"
              class="{% if form.errors contains 'password' %}input-error{% endif %}"
              placeholder="{{ 'customer.login.password' | t }}">
+             </div>
+
     {% endif %}
+  <div class="customer--fields">
 
     <input type="submit" class="btn" value="{{ 'customer.login.sign_in' | t }}">
+</div>
+ 
 
-    <a href="/">{{ 'customer.login.cancel' | t }}</a>
+  <div class="customer--fields">
 
     <a href="/account/register">
       {{ 'layout.customer.create_account' | t }}
     </a>
 
+             </div>
+
+
     {% if form.password_needed %}
+  <div class="customer--fields">
+
       <a href="#recover" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a>
+             </div>
+    
     {% endif %}
   {% endform %}
 

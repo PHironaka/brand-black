@@ -9,6 +9,7 @@ header {
     padding: 1em 0;
 	
 	.logo { 
+    width:160px;
 		svg {
 			width: 100%; height: auto; 
 		}
@@ -32,7 +33,7 @@ margin:0;
 
 .site-nav__submenu {
     position: absolute;
-    top: 40px;
+    top: 55px;
     margin: 0;
     left: 0;
     padding: 20px 0;
@@ -42,13 +43,29 @@ margin:0;
     justify-content: center;
     overflow-x: hidden;
     z-index: 10;
-    text-align: center;
+    text-align: left;
     grid-template-columns: 100px 100px 100px 100px;
 
-    li {
-    display: inline-block;
-    margin: 0 2em;
+    .container {
+        grid-template-columns: 1fr; 
     }
+
+    li {
+        display: block;
+    font-weight: bold;
+        margin: .5em 0px 1em;
+    font-size: 1.5em;
+    }
+}
+
+.site-nav__link--icon svg {
+        border: 2px solid;
+        padding: 2px;
+    border-radius: 50%;
+}
+
+.cart {
+    margin-right:1em;
 }
 
 .site-logo {

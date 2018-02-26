@@ -43,11 +43,14 @@
               {{ link.title }}
             </a>
             <ul class="site-nav__submenu">
+      <div class="container">
+
               {% for childlink in menus[child_list_handle].links %}
                 <li {% if childlink.active %}class="site-nav--active"{% endif %}>
                   <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
                 </li>
               {% endfor %}
+              </div>
             </ul>
           </li>
         {% else %}
@@ -60,7 +63,7 @@
   </nav>
 
 <ul class="user-login">
-        <a href="/cart">
+        <a href="/cart" class="cart">
       {% include 'icon-cart' %}
       ({{ cart.item_count }})
     </a>
@@ -68,7 +71,7 @@
             {% if shop.customer_accounts_enabled %}
                   <li class="site-nav__item site-nav__expanded-item">
                     <a class="site-nav__link site-nav__link--icon" href="/account">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                     </a>
                   </li>
                 {% endif %}

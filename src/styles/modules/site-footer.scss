@@ -6,14 +6,31 @@ color: #5d5d5d;
 a {
 	color:#5d5d5d;
 }
+
+ul {
+    @media (min-width: 480px) and (max-width: 979px) {
+   margin:0;
+   padding:0;
+    
+}
+}
 .container {
 	    grid-template-columns: 2fr 1.5fr 1.5fr 2fr;
+        @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+    
+}
+
 }
 
 
 
 .footer-right {
 	text-align:right;
+    @media screen and (max-width: 700px){
+        text-align:left;
+
+}
 
 }
 ul.social {
@@ -21,6 +38,11 @@ ul.social {
     grid-template-columns: 40px 40px 40px;
     justify-content: right;
     color: #5d5d5d;
+    @media screen and (max-width: 700px) {
+    justify-content: left;
+        
+
+}
     svg {
     fill:black;
     }

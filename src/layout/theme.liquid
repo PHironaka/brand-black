@@ -62,7 +62,7 @@
 
   {% section 'header' %}
 
-  <main role="main" class="main-container" id="MainContent">
+  <main role="main" class="{% if page.title == 'Stocklist' %}page-container{% else %}main-container {% endif %}" id="MainContent">
     {{ content_for_layout }}
   </main>
 

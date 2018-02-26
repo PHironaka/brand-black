@@ -1,4 +1,6 @@
 {% if cart.item_count > 0 %}
+
+<div class="cart-page">
   <h1>{{ 'cart.general.title' | t }}</h1>
 
   <form action="/cart" method="post" novalidate>
@@ -105,7 +107,10 @@
     <input type="submit" name="update" value="{{ 'cart.general.update' | t }}">
     <input type="submit" name="checkout" class="btn" value="{{ 'cart.general.checkout' | t }}">
   </form>
+  </div>
 {% else %}
+<div class="cart-page">
+
   <h1>{{ 'cart.general.title' | t }}</h1>
 
   {% comment %}
@@ -126,3 +131,5 @@
     <p>{{ 'cart.general.cookies_required' | t }}</p>
   </div>
 {% endif %}
+
+</div>

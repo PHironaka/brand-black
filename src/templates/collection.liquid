@@ -32,7 +32,10 @@
       <div class="collection-item">
         {% if product.featured_image != blank %}
           <a href="{{ product.url | within: collection }}">
-            {{ product.featured_image.src | img_url: '480x480' | img_tag: product.featured_image.alt }}
+                    <div class="reveal">
+  <img src="{{ product.featured_image.src | img_url: 'master' }}" alt="{{ product.featured_image.alt | escape }}"><!-- this is your original image tag -->
+  <img class="hidden" src="{{ product.images[1] | img_url: 'master' }}" alt="{{ product.images.last.alt | escape }}" />
+</div>
           </a>
         {% endif %}
 
