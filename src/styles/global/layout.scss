@@ -91,7 +91,15 @@ html {
   position:relative;
     width: 100%;
     height: auto;
-        margin-top: 18%;
+        margin-top: 100px;
+
+        h3 {
+        color:white;
+        font-size:1.4em;
+        text-align:center;
+        font-weight:normal;
+        text-transform:uppercase;
+        }
 }
 
 video {
@@ -133,13 +141,19 @@ video {
     background-image: url(https://cdn.shopify.com/s/files/1/2140/7529/files/BrandBlack_JAN2018_RRP_2587.jpg?4811233464807835234);
     background-repeat: repeat;
     background-size: cover;
+    background-attachment:fixed;
     background-position: top;
     width: 100%;
     height: 100%;
-    max-height:890px;
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.see-more--editorial {
+  text-align:center;
+  color:white;
+  cursor:pointer;
 }
 
 #shopify-section-featured-collection {
@@ -152,8 +166,6 @@ video {
     "a a a a b b b b"
     "a a a a b b b b"
     "a a a a b b b b"
-    "a a a a b b b b"
-    "a a a a d d d d"
     "c c c c d d d d"
     "c c c c d d d d"
     "c c c c d d d d"
@@ -165,7 +177,16 @@ video {
     "g g g g h h h h"
     "g g g g h h h h"
     "g g g g h h h h"
-    "g g g g h h h h";
+    "g g g g h h h h"
+    "i i i i j j j j"
+    "i i i i j j j j"
+    "i i i i j j j j"
+    "i i i i j j j j"
+    "i i i i k k k k"
+    "i i i i k k k k"
+    "i i i i k k k k"
+    "i i i i k k k k"
+    "i i i i k k k k";
 
     @media screen and (max-width: 700px) {
     display:block;   
@@ -183,6 +204,7 @@ video {
 
 .featured-collection--intro-copy {
   margin: 0 0 6em;
+  color:white;
 
    @media (min-width: 480px) and (max-width: 979px) {
     margin:0;
@@ -190,9 +212,17 @@ video {
 }
 }
 
+.featured-collection--intro-copy a:hover {
+  color:black;
+  background:white;
+  border:none;
+}
+
+
+
 .featured-collection--item1 {
   grid-area:a;
-  align-self:end;
+  align-self: center;
 }
 
 .featured-collection--item2 {
@@ -202,16 +232,17 @@ video {
 
 .featured-collection--item3 {
   grid-area:c;
-  align-self: start;
+   align-self: start;
 }
 
 .featured-collection--item4 {
   grid-area:d;
-  align-self: end;
+   align-self: center;
 }
 
 .featured-collection--item5 {
   grid-area:e;
+      align-self: end;
 }
 
 .featured-collection--item6 {
@@ -221,14 +252,31 @@ video {
 }
 
 .featured-collection--item7 {
-align-self: start;
+align-self: center;
   grid-area:g;
 }
 
 .featured-collection--item8 {
-  align-self:end;
+   align-self: center;
   grid-area:h;
 }
+
+
+.featured-collection--item9 {
+  grid-area:i;
+
+}
+
+.featured-collection--item10 {
+    align-self: end;
+  grid-area:j;
+}
+
+.featured-collection--item11 {
+       align-self: end;
+  grid-area:k;
+}
+
 
 .pagination {
   grid-column: auto / span 4;
@@ -266,9 +314,9 @@ align-self: start;
 
 .add-to-cart {
       box-sizing: border-box;
-    background: #000;
-    border: 0;
-    color: #fff;
+    background: #fff;
+    border: 1px solid;
+    color: #000;
     display: block;
     float: left;
     font-weight: bold;
@@ -277,6 +325,16 @@ align-self: start;
     padding: 16px 24px;
     width: 100%;
     text-align: center;
+      -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;  
+}
+
+.add-to-cart:hover {
+  background: #000;
+    color: #fff;
+    
 }
 
 .selector-wrapper {

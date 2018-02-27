@@ -1,12 +1,22 @@
-<div class="hero-bg--img"></div>
 
 <section class="video-container">
+
+{% if section.settings.header-image  %}
+<img src="{{ section.settings.header-image | img_url: 'master' }}" />
+<h3> Should I Kiss the White Fang</h3>
+{% else  %}
+
 
 <video playsinline="" autoplay="" muted="" loop="">
 <source type="video/mp4" src="https://cdn.shopify.com/s/files/1/0400/1917/files/DELTA_PRIMITIVE.mp4?10654709271182007118" type="video/mp4">
 <source type="video/webm" src="https://cdn.shopify.com/s/files/1/0400/1917/files/DELTA_PRIMITIVE_HiRes_short.webm?14396379370546019582" type="video/webm">
 </video>
+
+{% endif  %}
+
 </section>
+
+<div class="see-more--editorial"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div>
 
 
 {% schema %}
@@ -33,6 +43,13 @@
 			"default": "vimeo",
             "info": "From which site is the video streaming from?"
 		},
+
+    {
+        "type": "image_picker",
+        "id": "header-image",
+        "label": "header-image"
+   },
+
 		{
 			"type": "text",
 			"id": "video_id",

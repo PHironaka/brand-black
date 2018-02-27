@@ -139,3 +139,13 @@ $(function() {
   }
   
 });
+
+
+$(document).ready(function () {
+  $('div.see-more--editorial').click(function() {
+  $('html, body').animate({
+    scrollTop: $("div.intro-copy").offset().top
+  }, 1000)
+})
+});
+
