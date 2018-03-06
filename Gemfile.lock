@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    turbolinks (5.1.0)
+      turbolinks-source (~> 5.1)
+    turbolinks-source (5.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  turbolinks
+
+BUNDLED WITH
+   1.15.3

@@ -56,16 +56,23 @@
   {{ content_for_header }}
 </head>
 
-<body id="{{ page_title | handle }}" class="{% if template contains 'index' %}hero-bg--img{% else %}{% endif %} template-{{ template.name | handle }}">
+<body  id="{{ page_title | handle }}" class="{% if template contains 'index' %}hero-bg--img{% else %}{% endif %} template-{{ template.name | handle }}">
+
+  {% if template contains 'index' %}<div id="loading"></div> {% elsif template contains 'collection' %}<div id="loading"></div> {% endif %} 
+
 
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
   {% section 'header' %}
 
-  <main role="main" class="{% if page.title == 'Stocklist' %}page-container{% else %}main-container {% endif %}" id="MainContent">
-    {{ content_for_layout }}
-  </main>
 
+
+  <main role="main" class="{% if page.title == 'Stocklist' %}page-container{% else %}main-container {% endif %}" id="{% if template contains 'index' %}page{% elsif template contains 'collection' %}page{% else %}MainContent{% endif %}" >
+
+    {{ content_for_layout }}
+
+  </main>
+      {% if template contains 'index' %}</div>{% endif %} 
   {% section 'footer' %}
 
 

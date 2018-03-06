@@ -1,46 +1,66 @@
 {%- assign current_variant = product.selected_or_first_available_variant -%}
+{% assign size_chart = product.metafields.sizechart %}
+{% assign key = 'url' %}
 
+{% for option in product.options %}
+  {% if option == 'Color' %}
+    {% assign colorOptionIndex = forloop.index0 %}
+    {% assign color = product.selected_or_first_available_variant.options[colorOptionIndex] %}
+  {% endif %}
+{% endfor %}
 
+{% assign found = false %}
+{% for c in product.collections %}
+  {% if c.handle == "footwear" %}
+    {% assign found = true %}
+  {% endif %}
+{% endfor %}
 
+<div class="product-modal">
+    <a href="#" class="close"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></a>
+    <div class="gallery-wrapper container">
+        <ul class="gallery list-unstyled">
+        {% for image in product.images %}
+            <li>
+                <img src="{{ image.src | img_url: '1280x' }}" alt="{{ image.alt | escape }}" class="img-responsive img-thumb">
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="overlay"></div>
+</div>
+
+{% if size_chart.url %}
 
 <div class="chart-modal modal-box">
     <a href="#" class="close"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></a>
-    <div class="gallery-wrapper ">
+    <div class="gallery-wrapper container">
         <ul class="gallery list-unstyled">
           <li>
-
-          {% if collection.handle == "shoes" %}
-              <img src="https://cdn.shopify.com/s/files/1/2140/7529/files/BRANDBLACK_SIZE_CHART.jpeg?5688401156162915247" alt="Size Chart for {{ product.title }}" class="img-responsive img-thumb size-chart-img">
-          {% else %}
-                  <img src="https://cdn.shopify.com/s/files/1/2140/7529/files/TOPS-Long_sleeve_BB1197.jpg?1512722147320762584" alt="Size Chart for {{ product.title }}" class="img-responsive img-thumb size-chart-img">
-
-          {% endif %}
-
+              <img src="{{ size_chart.url }}" alt="Size Chart for {{ product.title }}" class="img-responsive img-thumb size-chart-img">
           </li>
         </ul>
     </div>
     <div class="overlay"></div>
 </div>
 
+{% elsif found == true %}
 
+<div class="chart-modal modal-box">
+    <a href="#" class="close"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></a>
+    <div class="gallery-wrapper container">
+        <ul class="gallery list-unstyled">
+          <li>
+              <img src="{{ 'footware-size-chart.jpg' | asset_url }}" alt="Size Chart for {{ product.title }}" class="img-responsive img-thumb" style="margin:auto">
+          </li>
+        </ul>
+    </div>
+    <div class="overlay"></div>
+</div>
 
-  {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+{% endif %}
 
-
-
-  <meta itemprop="name" content="{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}">
-  <meta itemprop="url" content="{{ shop.url }}{{ current_variant.url }}">
-  <meta itemprop="brand" content="{{ product.vendor }}">
-  <meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
-  <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
-
-
-  {% if featured_image != blank %}
-  <div class="product-item">
-    <img src="{{ featured_image | img_url: '480x480' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image>
-
-  
-  {%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign current_variant = product.selected_or_first_available_variant -%}
 {%- assign featured_img_src = current_variant.featured_image.src | default: product.featured_image.src -%}
 {%- assign featured_img_alt = current_variant.featured_image.alt | default: product.featured_image.alt -%}
 
@@ -57,36 +77,60 @@
         </li>
         {% endfor %}
     </ul>
+
+
+
+
 </div>
-{% endif %}  
+{% endif %}
+
 {% endcomment %}
-    </div>
-  {% endif %}
+<div class="product-item col-lg-7 col-sm-6 hidden-xs">
+    <div class="img-wrapper">
+
+     {% if product.images.size > 1 %}
+    <ul class="product-thumbs product-single__thumbnails product-single__thumbnails-{{ section.id }} ">
+        {% for image in product.images %}
+        <li class="product-single__thumbnails-item " data-background-color="{{ image.alt }}">
+      
+            <img src="{{ image.src | img_url: '88x' }}" data-lrg="{{ image.src | img_url: '1280x' }}" class="img-responsive img-thumb product-single__thumbnail-image" alt="{{ image.alt }}">
+       
+        </li>
+        {% endfor %}
+    </ul>
+
+{% endif %}  
+
+        <img id="FeaturedImage-{{ section.id }}" src="{{ featured_img_src | img_url: '1280x' }}" alt="{{ featured_img_alt | escape }}" class="img-responsive product-img">
+  
 
 
-<div class="product-item">
-  <h2>{{ product.title }}</h2>
+</div>
+</div>
 
-    <div class="product-price" data-price-wrapper>
+<section class=" product-item--info section-product product-02 section-container " itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">
+<meta itemprop="name" content="{{ product.title }}">
+<meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+<meta itemprop="image" content="{{ product.featured_image.src | img_url: '800x' }}">
+        <div class="product-info-container col-lg-4 col-sm-4 col-xs-12">
+            <div id="bb-product" data-sku"" data-name"" data-price="">
+              <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+              <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+                <div class="product-page-container">
+                    <form action="/cart/add" method="post" enctype="multipart/form-data" class="product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}" data-section="{{ section.id }}">
+                        <div class="product-detail">
+                              <h2>{{ product.title }}</h2>
+                                <div class="product-price" data-price-wrapper>
         <span data-product-price>
           {{ current_variant.price | money }}
         </span>
 
-        {% if product.compare_at_price_max > product.price %}
-          <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
-          <s data-compare-price>
-            {% if current_variant.compare_at_price > current_variant.price %}
-              {{ current_variant.compare_at_price | money }}
-            {% endif %}
-          </s>
-        {% endif %}
+        
       </div>
 
 
 
-
-
-  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
     <meta itemprop="priceCurrency" content="{{ shop.currency }}">
     <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
     <link itemprop="availability" href="http://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}">
@@ -155,27 +199,16 @@
 
     <div class="col-sm-6"><a href="#" id="sizeInit" class="btn  btn-size btn-add btn-block text-uppercase">Size Chart</a></div>
 
+       
 
+                           
+</section>
 
-  </div>
 <div class="related-products">
 
 <h2> Related Products </h2>
 </div>
 {% include 'related-products' %}
-
-
-  {% if section.settings.show_share_buttons %}
-    {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
-  {% endif %}
-
-  {% unless product == empty %}
-    <script type="application/json" data-product-json>
-      {{ product | json }}
-    </script>
-  {% endunless %}
-
-
 
 {% unless product == empty %}
   <script type="application/json" id="ProductJson-{{ section.id }}">
@@ -184,7 +217,9 @@
 {% endunless %}
 
 
+{% comment %}
 <script>
+
   jQuery(function($) {
     
     var $colorSelect = $('.option-selector-Color');
@@ -230,4 +265,7 @@
   });
    
 </script>
+
+{% endcomment %}
+
 

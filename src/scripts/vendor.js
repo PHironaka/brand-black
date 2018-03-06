@@ -39,6 +39,8 @@ window.theme = window.theme || {};
 /*================ Templates ================*/
 // =require templates/customers-addresses.js
 // =require templates/customers-login.js
+//= require turbolinks
+
 
 $(document).ready(function() {
   var sections = new slate.Sections();
@@ -83,22 +85,12 @@ $('.site-nav--has-submenu').hover(function() {
     $(this).find('.site-nav__submenu').stop(true, true).delay(100).slideUp(200);
   });
 
-$(function() {
-      
-    $('.mobile-menu').click(function(e) {
+$('.mobile-menu').click(function(e) {
       $('.modal-box.mobile').addClass('open');
       $('body').addClass('modal');
       e.preventDefault();
     });
-  
-    $('#sizeInit').click(function(e) {
-      $('.chart-modal.modal-box').addClass('open');
-      $('body').addClass('modal');
-      e.preventDefault();
-    });
-
-    function closeModal() {
-        $('.product-modal').removeClass('open');
+function closeModal() {
         $('.modal-box').removeClass('open');
         $('body').removeClass('modal');
     }
@@ -106,6 +98,58 @@ $(function() {
     $('.close').click(function() {
         closeModal();
     });
+
+$(document).ready(function () {
+  $('div.see-more--editorial').click(function() {
+  $('html, body').animate({
+    scrollTop: $("div.intro-copy").offset().top
+  }, 1000)
+})
+});
+
+function onReady(callback) {
+    var intervalID = window.setInterval(checkReady, 1000);
+    function checkReady() {
+        if (document.getElementsByTagName('body')[0] !== undefined) {
+            window.clearInterval(intervalID);
+            callback.call(this);
+        }
+    }
+}
+
+function show(id, value) {
+    document.getElementById(id).style.display = value ? 'grid' : 'none';
+}
+
+onReady(function () {
+    show('page', true);
+    show('loading', false);
+});
+
+$(document).ready(function() {
+    $('#page').fadeIn(1000);
+
+    var $currentColor = $('#SingleOptionSelector-1 option:selected').val();
+    var $thumbnails = $('.product-single__thumbnails').find('li');
+    
+  
+    
+    function showThumbnails() {
+      $thumbnails.each(function() {
+        if( $(this).data("background-color") != $currentColor) {
+          $(this).hide();
+        } else {
+          $(this).show();
+        }
+      });
+    }
+    showThumbnails();
+
+});
+
+$(function() {
+      
+    
   
     $(document).keydown(function(e) {
         var key = e.which;
@@ -137,15 +181,44 @@ $(function() {
       closeModal();
     });
   }
+
+
   
 });
 
 
-$(document).ready(function () {
-  $('div.see-more--editorial').click(function() {
-  $('html, body').animate({
-    scrollTop: $("div.intro-copy").offset().top
-  }, 1000)
-})
-});
+   
+  
+
+   
+
+
+  // (function($) {
+    
+  //   var $thumbnails = $('.product-single__thumbnails').find('li');
+
+  //   function showThumbnails() {
+  //     $thumbnails.each(function() {
+  //       if( $(this).data('color') != $currentColor) {
+  //         $(this).hide();
+  //       } else {
+  //         $(this).fadeIn();
+  //       }
+  //     });
+  //   }
+  //   showThumbnails();
+  //   showValues();
+    
+  //   $(document).on('change', $colorSelect, function(e) {
+  //     $currentColor = $('.option-selector-Color option:selected').val();
+  //     showThumbnails();
+  //     showValues();
+  //   });   
+    
+  // });
+   
+ 
+
+    
+
 

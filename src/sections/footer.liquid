@@ -19,10 +19,10 @@
   {% endif %}
 
     <ul>
-    <li><a href=""> Jackets </a></li>
-    <li><a href=""> Shoes </a></li>
+    <li><a href="/collections/apparel"> Apparel </a></li>
+    <li><a href="/collections/shoes"> Shoes </a></li>
 
-    <li><a href=""> Collections </a></li>
+    <li><a href="/collections/sale"> Sale </a></li>
     </ul>
 
   <div class="footer-right">
@@ -59,7 +59,7 @@
             </li>
         {% endfor %}
         </ul>
-    <small class="copyright">{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. </small>
+    <small class="copyright">{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name }}. </small>
    </div>
 
   </div>

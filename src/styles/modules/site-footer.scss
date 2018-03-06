@@ -9,6 +9,18 @@ line-height:1.4;
 color: #5d5d5d;
 
 
+ul {
+    @media screen and (max-width: 700px) {
+    display: grid;
+    grid-column-gap: 2rem;
+      grid-gap:10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 ;
+  
+    
+}
+}
+
 a {
 	color:#5d5d5d;
 }
@@ -46,7 +58,7 @@ ul.social {
     color: #5d5d5d;
     @media screen and (max-width: 700px) {
     justify-content: left;
-        
+    margin:2em 0;   
 
 }
     svg {
