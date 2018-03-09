@@ -62,7 +62,7 @@ nav {
 
 nav ul {
 display: grid;
-grid-template-columns: 68px 100px 92px 100px 80px;
+grid-template-columns: 68px 80px 92px 88px 67px;
 text-align: right;
 margin:0;
 }
@@ -95,7 +95,9 @@ margin:0;
 }
 
 .submenu-sub {
-     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 2fr));
+    grid-column-gap: 2rem;
+    grid-gap:15px;
     padding: 0;
     text-align: left;
     margin: 15px 0;
@@ -104,13 +106,14 @@ margin:0;
          display: block;
     margin: 0;
     padding: 0;
+    font-weight:normal;
     font-size: .7em;
     }
 }
 
 .site-nav__link--icon svg {
         border: 2px solid;
-        padding: 2px;
+        padding: 1px;
     border-radius: 50%;
 }
 
@@ -133,7 +136,7 @@ margin:0;
  @media screen and (max-width: 800px) {
     position:absolute;
     top:10px;
-    right:20px;
+    right:10px;
     display:block;
     
 }
@@ -177,6 +180,7 @@ margin:0;
 
     .menu ul {
     margin:8em 0 0;
+    padding:0;
     li {
     text-align:center;
     font-size:1.5em;
@@ -192,3 +196,8 @@ margin:0;
     right: 4em;
     }
 
+.menu-logo {
+        display: block;
+    width: 89px;
+    margin: 4em auto;
+}

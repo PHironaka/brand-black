@@ -92,7 +92,7 @@
             {% if shop.customer_accounts_enabled %}
                   <li class="site-nav__item site-nav__expanded-item">
                     <a class="site-nav__link site-nav__link--icon" href="/account">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 23 23" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                     </a>
                   </li>
                 {% endif %}
@@ -135,6 +135,11 @@
 
         </a>
       <div class="menu">
+      <div class="menu-logo">
+   {% include 'footer-logo' %}
+
+      </div>
+
         <ul class="site-nav">
     {% for link in linklists.main-menu.links %}
     {% assign child_list_handle = link.title | handle %}

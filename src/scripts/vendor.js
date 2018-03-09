@@ -79,6 +79,8 @@ $(document).ready(function() {
 
 
 
+
+
 $('.site-nav--has-submenu').hover(function() {
     $(this).find('.site-nav__submenu').stop(true, true).delay(100).slideDown(200);
   }, function() {
@@ -90,7 +92,15 @@ $('.mobile-menu').click(function(e) {
       $('body').addClass('modal');
       e.preventDefault();
     });
+
+   $('#sizeInit').click(function(e) {
+      $('.chart-modal.modal-box').addClass('open');
+      $('body').addClass('modal');
+      e.preventDefault();
+    });
+
 function closeModal() {
+        $('.product-modal').removeClass('open');
         $('.modal-box').removeClass('open');
         $('body').removeClass('modal');
     }
@@ -127,7 +137,7 @@ onReady(function () {
 });
 
 $(document).ready(function() {
-    $('#page').fadeIn(1000);
+    $('#page').fadeIn(1500);
 
     var $currentColor = $('#SingleOptionSelector-1 option:selected').val();
     var $thumbnails = $('.product-single__thumbnails').find('li');
@@ -145,6 +155,20 @@ $(document).ready(function() {
     }
     showThumbnails();
 
+});
+
+$(document).ready(function() {
+  if( typeof(productOptions ) != "undefined" ){
+    for(i=0;i<productOptions.length;i++) {
+      $('.single-option-selector:eq('+ i +')')
+      .filter(function() {
+        return $(this).find('option').length > 1
+      })
+      .prepend('<option value="">Pick a ' + productOptions[i][i] + '</option>')
+      .val('')
+      .trigger('change');
+    }
+  }
 });
 
 $(function() {
@@ -186,36 +210,54 @@ $(function() {
   
 });
 
+$('.video-container').on('click', function(){
+  var video = $(this).find('video')[0];
+  if (video.paused) {
+    $(this).removeClass('paused');
+    video.play();
+  } else {
+    video.pause();
+    $(this).addClass('paused');
+  }
+});
+   
+ 
+     jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
+    jQuery('.quantity').each(function() {
+      var spinner = jQuery(this),
+        input = spinner.find('input[type="number"]'),
+        btnUp = spinner.find('.quantity-up'),
+        btnDown = spinner.find('.quantity-down'),
+        min = input.attr('min'),
+        max = input.attr('max');
+
+      btnUp.click(function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue >= max) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue + 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+      btnDown.click(function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue <= min) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue - 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+    }); 
 
    
-  
-
-   
 
 
-  // (function($) {
-    
-  //   var $thumbnails = $('.product-single__thumbnails').find('li');
-
-  //   function showThumbnails() {
-  //     $thumbnails.each(function() {
-  //       if( $(this).data('color') != $currentColor) {
-  //         $(this).hide();
-  //       } else {
-  //         $(this).fadeIn();
-  //       }
-  //     });
-  //   }
-  //   showThumbnails();
-  //   showValues();
-    
-  //   $(document).on('change', $colorSelect, function(e) {
-  //     $currentColor = $('.option-selector-Color option:selected').val();
-  //     showThumbnails();
-  //     showValues();
-  //   });   
-    
-  // });
    
  
 

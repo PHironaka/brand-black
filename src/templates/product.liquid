@@ -1,3 +1,18 @@
+
+{% section 'product' %}
+  <div class="related-products">
+
+<h2> Related Products </h2>
+<div class="related-products-list">
+{% include 'related-products' %}
+</div>
+ </div>
+
+
+
+
+
+{% comment %}
 {%- assign current_variant = product.selected_or_first_available_variant -%}
 {% assign size_chart = product.metafields.sizechart %}
 {% assign key = 'url' %}
@@ -86,7 +101,6 @@
 
 {% endcomment %}
 <div class="product-item col-lg-7 col-sm-6 hidden-xs">
-    <div class="img-wrapper">
 
      {% if product.images.size > 1 %}
     <ul class="product-thumbs product-single__thumbnails product-single__thumbnails-{{ section.id }} ">
@@ -105,7 +119,6 @@
   
 
 
-</div>
 </div>
 
 <section class=" product-item--info section-product product-02 section-container " itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">
@@ -268,4 +281,4 @@
 
 {% endcomment %}
 
-
+{% endcomment %}

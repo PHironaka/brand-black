@@ -62,7 +62,7 @@
               {% endif %}
 
               <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
-                <small>{{ 'cart.general.remove' | t }}</small>
+                <small>{{ 'cart.general.remove' | t }} x</small>
               </a>
             </td>
             <td data-label="{{ 'cart.label.price' | t }}">
@@ -76,12 +76,16 @@
               {% endif %}
             </td>
             <td data-label="{{ 'cart.label.quantity' | t }}">
+            <div class="quantity">
+
+
               <input type="number"
                      name="updates[]"
                      id="updates_{{ item.key }}"
                      value="{{ item.quantity }}"
                      min="0"
                      aria-label="{{ 'cart.general.item_quantity' | t }}">
+                  </div>   
             </td>
             <td data-label="{{ 'cart.label.total' | t }}">
               {{ item.line_price | money }}
@@ -100,7 +104,7 @@
     {% endif %}
     <p>{{ 'cart.general.shipping_at_checkout' | t }}</p>
     <input type="submit" name="update" value="{{ 'cart.general.update' | t }}">
-    <input type="submit" name="checkout" class="btn" value="{{ 'cart.general.checkout' | t }}">
+    <input type="submit" name="checkout" value="{{ 'cart.general.checkout' | t }}">
     </div>
   </form>
   </div>

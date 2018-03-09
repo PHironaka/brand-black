@@ -11,6 +11,7 @@
   {% if settings.favicon != blank %}
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
   {% endif %}
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
 
   {% capture seo_title %}
     {{ page_title }}
@@ -77,7 +78,7 @@
 
 
   <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
-
+{% include 'pick-an-option' %}
 </body>
 
 </html>
