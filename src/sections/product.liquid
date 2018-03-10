@@ -41,8 +41,30 @@
 
           {% if collection.handle == "shoes" %}
               <img src="https://cdn.shopify.com/s/files/1/2140/7529/files/BRANDBLACK_SIZE_CHART.jpeg?5688401156162915247" alt="Size Chart for {{ product.title }}" class="img-responsive img-thumb size-chart-img">
-          {% else %}
-                  <img src="https://cdn.shopify.com/s/files/1/2140/7529/files/TOPS-Long_sleeve_BB1197.jpg?1512722147320762584" alt="Size Chart for {{ product.title }}" class="img-responsive img-thumb size-chart-img">
+          {% else collection.handle == "SS18 BRIGGS"  %}
+                  <img src="https://cdn.shopify.com/s/files/1/0400/1917/files/BOTTOMS-Pants_BB1160.jpg?580322857040754913" alt="Size Chart for {{ product.title }}" class="img-responsive img-thumb size-chart-img">
+          {% else collection.handle == "SS18 MILFORD"  %}
+                  <img src="https://cdn.shopify.com/s/files/1/0400/1917/files/TOPS-Long_sleeve_BB1230.jpg?580322857040754913" alt="Size Chart for {{ product.title }}" class="img-responsive img-thumb size-chart-img">
+
+       
+
+          {% else collection.handle == "SS18 IAN"  %}
+                  <img src="https://cdn.shopify.com/s/files/1/0400/1917/files/TOPS-Long_sleeve_BB1181.jpg?580322857040754913" alt="Size Chart for {{ product.title }}" class="img-responsive img-thumb size-chart-img">
+
+           {% else collection.handle == "SS18 COOPER"  %}
+                  <img src="https://cdn.shopify.com/s/files/1/0400/1917/files/TOPS-Long_sleeve_BB1180.jpg?580322857040754913" alt="Size Chart for {{ product.title }}" class="img-responsive img-thumb size-chart-img"> 
+
+             {% else collection.handle == "SS18 STANDARD"  %}
+                  <img src="https://cdn.shopify.com/s/files/1/0400/1917/files/TOPS-Long_sleeve_BB1157D.jpg?580322857040754913" alt="Size Chart for {{ product.title }}" class="img-responsive img-thumb size-chart-img"> 
+
+                  {% else collection.handle == "SS18 PULASKI"  %}
+                  <img src="https://cdn.shopify.com/s/files/1/0400/1917/files/TOPS-JACKET_BB1166.jpg?580322857040754913" alt="Size Chart for {{ product.title }}" class="img-responsive img-thumb size-chart-img">                      
+
+                  {% else collection.handle == "SS18 HORNE"  %}
+                  <img src="https://cdn.shopify.com/s/files/1/0400/1917/files/BOTTOMS-Short_BB1124.jpg?580322857040754913" alt="Size Chart for {{ product.title }}" class="img-responsive img-thumb size-chart-img"> 
+
+                    {% else collection.handle == "SS18 TREMAYNE"  %}
+                  <img src="https://cdn.shopify.com/s/files/1/0400/1917/files/TOPS-JACKET_BB1163A.jpg?580322857040754913" alt="Size Chart for {{ product.title }}" class="img-responsive img-thumb size-chart-img">                      
 
           {% endif %}
 
@@ -147,7 +169,7 @@
       </select>
 
 
-      <button class="add-to-cart"
+      <button class=" {% if current_variant.available %}add-to-cart{% else %}sold-out{% endif %}"
         type="submit"
         name="add"
         data-add-to-cart

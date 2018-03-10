@@ -141,12 +141,12 @@
       </div>
 
         <ul class="site-nav">
-    {% for link in linklists.main-menu.links %}
+    {% for link in linklists.mobile-menu.links %}
     {% assign child_list_handle = link.title | handle %}
     {% if linklists[child_list_handle] and linklists[child_list_handle].links.size > 0 %}
-    <li class="site-nav--has-submenu{% if link.active %} site-nav--active{% endif %}">
+    <li class="site-nav--has-submenu-mobile{% if link.active %} site-nav--active{% endif %}">
       {{ link.title | link_to: link.url }}
-       <ul class="site-nav__submenu">
+       <ul class="site-nav__submenu-mobile">
        <div class="container">
 
         {% for child_link in linklists[child_list_handle].links %}

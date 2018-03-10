@@ -78,7 +78,11 @@ $(document).ready(function() {
 });
 
 
-
+$('.site-nav--has-submenu-mobile').click(function() {
+    $(this).find('.site-nav__submenu-mobile').fadeIn(200);
+  }, function() {
+    $(this).find('.site-nav__submenu-mobile').slideUp(200);
+  });
 
 
 $('.site-nav--has-submenu').hover(function() {

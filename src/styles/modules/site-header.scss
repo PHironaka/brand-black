@@ -94,6 +94,34 @@ margin:0;
     }
 }
 
+.site-nav__submenu-mobile {
+    position: absolute;
+    top: 55px;
+    margin: 0;
+    left: 0;
+    padding: 20px 0;
+    display: none;
+    width: 100%;
+    background-color: #fff;
+    justify-content: center;
+    overflow-x: hidden;
+    z-index: 10;
+    text-align: left;
+    grid-template-columns: 100px 100px 100px 100px;
+
+    .container {
+        grid-template-columns: 1fr; 
+    }
+
+    li {
+        display: block;
+    font-weight: bold;
+        margin: .5em 0px 1em;
+    font-size: 1.5em;
+    }
+}
+
+
 .submenu-sub {
     grid-template-columns: repeat(auto-fit, minmax(120px, 2fr));
     grid-column-gap: 2rem;
