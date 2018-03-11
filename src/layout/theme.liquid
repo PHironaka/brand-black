@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--[if IE 9]> <html class="ie9 no-js supports-no-cookies" lang="{{ shop.locale }}"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js supports-no-cookies" lang="{{ shop.locale }}"> <!--<![endif]-->
 <head>
@@ -57,7 +57,7 @@
   {{ content_for_header }}
 </head>
 
-<body  id="{{ page_title | handle }}" class="{% if template contains 'index' %}hero-bg--img{% else %}{% endif %} template-{{ template.name | handle }}">
+<body lang="en" dir="ltr" id="{{ page_title | handle }}" class="{% if template contains 'index' %}hero-bg--img{% else %}{% endif %} template-{{ template.name | handle }}">
 
   {% if template contains 'index' %}<div id="loading"></div> {% elsif template contains 'collection' %}<div id="loading"></div> {% endif %} 
 
